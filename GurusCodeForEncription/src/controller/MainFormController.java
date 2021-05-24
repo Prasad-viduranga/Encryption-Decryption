@@ -30,31 +30,10 @@ public class MainFormController {
     }
 
     public void btnEncryptOnAction(ActionEvent actionEvent) {
-        String text = txtText.getText();
-        String key = txtKey.getText();
-        String sEncoded = "";
-        int i = 0;
 
-        for (char s1 : text.toCharArray()
-        ) {
-            sEncoded = (char)((int)s1+(int)('z')) + sEncoded;
 
-        }
 
-        ////////////////////////////////////////////////////
 
-        String numString = txtText.getText();
-        int j = 0;
 
-        for (char keys : key.toCharArray()
-        ) {
-            System.out.println("heeeee"+(int) ('z'));
-            j = (int) keys + (int) ('z');
-            System.out.println((char)j);
-
-        }
-        System.out.println(text);
-        System.out.println(sEncoded);
-        txtCipherText.setText(sEncoded);
     }
 }
