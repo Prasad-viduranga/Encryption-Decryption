@@ -15,7 +15,7 @@ public class AppIni extends Application {
     public void start(Stage primaryStage) throws IOException {
         primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/MainForm.fxml"))));
 
-        primaryStage.titleProperty().setValue("POS System");
+        primaryStage.titleProperty().setValue("Encoder/Decoder ");
         primaryStage.show();
     }
 }
