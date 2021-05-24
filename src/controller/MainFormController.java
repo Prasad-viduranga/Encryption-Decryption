@@ -15,9 +15,17 @@ public class MainFormController {
     public TextField txtKey;
     public Button btnEncrypt;
     public AnchorPane contextOfMainForm;
+    public Button btnEncryptForm;
+    public Button btnDecryptForm;
 
-    public void btnEncryptOnAction(ActionEvent actionEvent) throws IOException {
+
+
+
+    public void btnDecryptFormOnAction(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) contextOfMainForm.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/SecondForm.fxml"))));
+    }
+
+    public void btnEncryptOnAction(ActionEvent actionEvent) {
     }
 }
