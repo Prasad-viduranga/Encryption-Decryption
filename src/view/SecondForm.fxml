@@ -22,7 +22,7 @@
       <TextField fx:id="txtCipherText" layoutX="182.0" layoutY="114.0" prefHeight="30.0" prefWidth="324.0" />
       <TextField fx:id="txtKey" layoutX="182.0" layoutY="187.0" prefHeight="30.0" prefWidth="324.0" />
       <Button fx:id="btnEncryptForm" layoutX="397.0" layoutY="328.0" mnemonicParsing="false" onAction="#btnEncryptFormOnAction" prefHeight="48.0" prefWidth="182.0" text="Encrypt Form" />
-      <TextField alignment="CENTER" layoutX="107.0" layoutY="290.0" prefHeight="26.0" prefWidth="389.0" promptText="Text" />
+      <TextField fx:id="txtDecrypted" alignment="CENTER" layoutX="107.0" layoutY="290.0" prefHeight="26.0" prefWidth="389.0" promptText="Text" />
       <Button fx:id="btnDecrypt" layoutX="253.0" layoutY="228.0" mnemonicParsing="false" onAction="#btnDecryptOnAction" prefHeight="26.0" prefWidth="182.0" text="Decrypt" />
    </children>
 </AnchorPane>
