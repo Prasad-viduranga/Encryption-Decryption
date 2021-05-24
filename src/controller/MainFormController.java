@@ -9,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 public class MainFormController {
     public TextField txtText;
@@ -32,29 +33,27 @@ public class MainFormController {
     public void btnEncryptOnAction(ActionEvent actionEvent) {
         String text = txtText.getText();
         String key = txtKey.getText();
-        String sEncoded = "";
+        String textEncoded = "";
         int i = 0;
 
         for (char s1 : text.toCharArray()
         ) {
-            sEncoded = (char)((int)s1+(int)('z')) + sEncoded;
+            textEncoded = (char) ((int) s1 + (int) ('z')) + textEncoded;
 
         }
 
-        ////////////////////////////////////////////////////
-
-        String numString = txtText.getText();
+        String keyEncoded = "";
         int j = 0;
 
         for (char keys : key.toCharArray()
         ) {
-            System.out.println("heeeee"+(int) ('z'));
             j = (int) keys + (int) ('z');
-            System.out.println((char)j);
-
+            //System.out.println((char)j);
+            keyEncoded = (char) j + keyEncoded;
         }
-        System.out.println(text);
-        System.out.println(sEncoded);
-        txtCipherText.setText(sEncoded);
+
+        String finalString = keyEncoded + textEncoded;
+
+        txtCipherText.setText(finalString);
     }
 }
