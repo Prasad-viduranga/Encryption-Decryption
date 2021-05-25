@@ -33,41 +33,47 @@ public class SecondFormController {
         String inputString = txtCipherText.getText();
         String inputKey = txtKey.getText();
 
-
-        //System.out.println(inputString.toCharArray().length);
-        String decrypted = "";
-        for (int i = 0; i < inputString.toCharArray().length; i++) {
-            decrypted = decrypted + (char) ((int) inputString.toCharArray()[i] - (int) ('z'));
-        }
-
-        String decryptedFinal = "";
-
-        for (char s1 : decrypted.toCharArray()
-        ) {
-            decryptedFinal = s1 + decryptedFinal;
-
-        }
-        String keyFinder = "";
-        String decodeText="";
-        int l = 0;
-
-        char c[] = decryptedFinal.toCharArray();
-        for (int i = c.length - 1; i > -1; i--) {
-
-            if (l < inputKey.length()) {
-                keyFinder = c[i] + keyFinder;
-                l++;
-            }else {
-                decodeText = c[i]+decodeText;
+        try {
+            //System.out.println(inputString.toCharArray().length);
+            int keyInput=Integer.parseInt(inputKey);
+            String decrypted = "";
+            for (int i = 0; i < inputString.toCharArray().length; i++) {
+                decrypted = decrypted + (char) ((int) inputString.toCharArray()[i] - (int) ('z')-keyInput);
             }
 
+            String decryptedFinal = "";
 
+            for (char s1 : decrypted.toCharArray()
+            ) {
+                decryptedFinal = s1 + decryptedFinal;
+
+            }
+            String keyFinder = "";
+            String decodeText="";
+            int l = 0;
+
+            char c[] = decryptedFinal.toCharArray();
+            for (int i = c.length - 1; i > -1; i--) {
+
+                if (l < inputKey.length()) {
+                    keyFinder = c[i] + keyFinder;
+                    l++;
+                }else {
+                    decodeText = c[i]+decodeText;
+                }
+
+
+            }
+            if (keyFinder.equals(inputKey)) {
+                txtDecrypted.setText(decodeText);
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Access Denied", ButtonType.CANCEL).show();
+            }
+
+        }catch (Exception e){
+            new Alert(Alert.AlertType.WARNING, "Please check the key ", ButtonType.CANCEL).show();
         }
-        if (keyFinder.equals(inputKey)) {
-            txtDecrypted.setText(decodeText);
-        }else {
-            new Alert(Alert.AlertType.ERROR,"Access Denied", ButtonType.CANCEL).show();
-        }
+
 
 
     }
