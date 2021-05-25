@@ -18,7 +18,9 @@ public class AppIni extends Application {
         primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/MainForm.fxml"))));
 
         primaryStage.titleProperty().setValue("Encoder/Decoder ");
+        primaryStage.setResizable(false);
         primaryStage.show();
+
     }
 }
 
