@@ -11,6 +11,8 @@ public class AppIni extends Application {
         launch(args);
     }
 
+    // Deploy the Main Form.fxml file
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/MainForm.fxml"))));

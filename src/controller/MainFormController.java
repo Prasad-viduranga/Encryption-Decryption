@@ -3,13 +3,14 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class MainFormController {
     public TextField txtText;
@@ -20,40 +21,47 @@ public class MainFormController {
     public Button btnDecryptForm;
     public TextField txtCipherText;
 
-    public void initialize() {
 
-
-    }
-
+    // when click on the "Decrypt Form" button, it is launch "Decryption form" in previous context of window.
     public void btnDecryptFormOnAction(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) contextOfMainForm.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/SecondForm.fxml"))));
     }
 
+    // when click on the "Decrypt Form" button, it is check text and key fields are empty or not
+    // if it is not empty then pop up the encrypted text in cipher text field.
+    //
     public void btnEncryptOnAction(ActionEvent actionEvent) {
         String text = txtText.getText();
         String key = txtKey.getText();
         String textEncoded = "";
         int i = 0;
 
-        for (char s1 : text.toCharArray()
-        ) {
-            textEncoded = (char) ((int) s1 + (int) ('z')) + textEncoded;
+        if (text.trim().isEmpty() && key.trim().isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "Check whether your text field or key field is empty", ButtonType.CANCEL).show();
 
+        } else if () {
+
+        } {
+
+            for (char s1 : text.toCharArray()
+            ) {
+                textEncoded = (char) ((int) s1 + (int) ('z')) + textEncoded;
+            }
+
+            String keyEncoded = "";
+            int j = 0;
+
+            for (char keys : key.toCharArray()
+            ) {
+                j = (int) keys + (int) ('z');
+                //System.out.println((char)j);
+                keyEncoded = (char) j + keyEncoded;
+            }
+
+            String finalString = keyEncoded + textEncoded;
+
+            txtCipherText.setText(finalString);
         }
-
-        String keyEncoded = "";
-        int j = 0;
-
-        for (char keys : key.toCharArray()
-        ) {
-            j = (int) keys + (int) ('z');
-            //System.out.println((char)j);
-            keyEncoded = (char) j + keyEncoded;
-        }
-
-        String finalString = keyEncoded + textEncoded;
-
-        txtCipherText.setText(finalString);
     }
 }

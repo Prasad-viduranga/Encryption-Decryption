@@ -8,20 +8,25 @@
 
 <AnchorPane fx:id="contextOfMainForm" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
    <children>
-      <Label layoutX="29.0" layoutY="106.0" text="Text">
+      <Label layoutX="70.0" layoutY="105.0" text="Text">
          <font>
-            <Font size="24.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="29.0" layoutY="175.0" text="Key">
+      <Label layoutX="73.0" layoutY="155.0" text="Key">
          <font>
-            <Font size="24.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtText" layoutX="129.0" layoutY="104.0" prefHeight="30.0" prefWidth="324.0" />
-      <TextField fx:id="txtKey" layoutX="129.0" layoutY="177.0" prefHeight="30.0" prefWidth="324.0" />
-      <Button fx:id="btnDecryptForm" layoutX="443.0" layoutY="333.0" mnemonicParsing="false" onAction="#btnDecryptFormOnAction" prefHeight="40.0" prefWidth="132.0" text="Decrypt Form" />
-      <TextField fx:id="txtCipherText" alignment="CENTER" layoutX="97.0" layoutY="280.0" prefHeight="26.0" prefWidth="389.0" promptText="Cipher Text" />
-      <Button fx:id="btnEncrypt" layoutX="269.0" layoutY="223.0" mnemonicParsing="false" onAction="#btnEncryptOnAction" text="Encypt" />
+      <TextField fx:id="txtText" layoutX="136.0" layoutY="105.0" prefHeight="30.0" prefWidth="324.0" promptText="Please add your msg here..." AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="100.0" />
+      <TextField fx:id="txtKey" layoutX="136.0" layoutY="169.0" prefHeight="30.0" prefWidth="324.0" promptText="Please add the encription key." AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="150.0" />
+      <Button fx:id="btnDecryptForm" layoutX="446.0" layoutY="323.0" mnemonicParsing="false" onAction="#btnDecryptFormOnAction" prefHeight="40.0" prefWidth="132.0" text="Decrypt Form" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+      <TextField fx:id="txtCipherText" alignment="CENTER" layoutX="103.0" layoutY="274.0" prefHeight="26.0" prefWidth="389.0" promptText="Cipher Text" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="275.0" />
+      <Button fx:id="btnEncrypt" layoutX="211.0" layoutY="223.0" mnemonicParsing="false" onAction="#btnEncryptOnAction" prefHeight="26.0" prefWidth="174.0" text="to Encypt" AnchorPane.leftAnchor="215.0" AnchorPane.rightAnchor="215.0" AnchorPane.topAnchor="200.0" />
+      <Label layoutX="128.0" layoutY="26.0" text="Encryption Form" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="25.0">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
