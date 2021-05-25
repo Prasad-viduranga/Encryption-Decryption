@@ -30,7 +30,9 @@ public class MainFormController {
 
     // when click on the "Decrypt Form" button, it is check text and key fields are empty or not
     // if it is not empty then pop up the encrypted text in cipher text field.
-    //In Encryption process, text take to reverse, next add the ascii valuve of "z" for each of letter's ascii and make a string.
+    //In Encryption process, text take to reverse, next add the ascii valuve of "z" for each of letter's ascii and numerical key value,
+    //That summation of ascii convert to the new character.
+    //Get a new String by new characters build as cipher text.
     public void btnEncryptOnAction(ActionEvent actionEvent) {
         String text = txtText.getText();
         String key = txtKey.getText();
@@ -53,7 +55,7 @@ public class MainFormController {
 
                 for (char keys : key.toCharArray()
                 ) {
-                    j = (int) keys + (int) ('z')+keyInt;
+                    j = (int) keys + (int) ('z');
                     //System.out.println((char)j);
                     keyEncoded = (char) j + keyEncoded;
                 }
