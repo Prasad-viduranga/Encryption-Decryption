@@ -15,7 +15,6 @@ public class SecondFormController {
     public TextField txtCipherText;
     public TextField txtKey;
     public Button btnDecrypt;
-    public AnchorPane contextOfMainForm;
     public AnchorPane contextOfSecondForm;
     public Button btnEncryptForm;
     public TextField txtDecrypted;
@@ -31,6 +30,7 @@ public class SecondFormController {
         stage1.setResizable(false);
     }
 
+    //This function invoke the crypto jar file to encrypt the inputString by using input key
     public void btnDecryptOnAction(ActionEvent actionEvent) {
 
         String inputString = txtCipherText.getText();
