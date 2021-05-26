@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,12 +17,17 @@ public class MainFormController {
     public TextField txtKey;
     public Button btnEncrypt;
     public AnchorPane contextOfMainForm;
-    public Button btnEncryptForm;
     public Button btnDecryptForm;
     public TextField txtCipherText;
 
     public void initialize() {
-        txtText.focusedProperty();
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                txtText.requestFocus();
+            }
+        });
+
     }
 
     // when click on the "Decrypt Form" button, it is launch "Decryption form" in previous context of window.
@@ -35,8 +41,6 @@ public class MainFormController {
     public void btnEncryptOnAction(ActionEvent actionEvent) {
         String text = txtText.getText();
         String key = txtKey.getText();
-
-
         txtCipherText.setText(Crypto.encrypt(text, key));
     }
 }

@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,7 +21,13 @@ public class SecondFormController {
     public TextField txtDecrypted;
 
     public void initialize() {
-        txtCipherText.focusedProperty();
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                txtCipherText.requestFocus();
+            }
+        });
+
     }
 
     //If click on "Encryption" button, then launch the Encryption Window in previous context of window.
@@ -30,13 +37,11 @@ public class SecondFormController {
         stage1.setResizable(false);
     }
 
-    //This function invoke the crypto jar file to encrypt the inputString by using input key
+    //This function invokes the crypto jar file to decrypt the inputString (cipher text) by using input key
     public void btnDecryptOnAction(ActionEvent actionEvent) {
 
         String inputString = txtCipherText.getText();
         String inputKey = txtKey.getText();
-
-
         txtDecrypted.setText(Crypto.decrypt(inputString,inputKey));
 
     }
